@@ -14,12 +14,20 @@ import BrandProvider from './src/styles/BrandSettings';
 import getTheme from './native-base-theme/components';
 import AppNavigator from './src/navigation/AppNavigator';
 import {i18nConfig} from './src/config/i18n-config';
+import {configureApiClient} from './src/config/api-config';
+import {enableScreens} from 'react-native-screens';
+
+//configure api calls using axios package
+configureApiClient();
+
+//to support react navigation
+enableScreens();
 
 class componentName extends PureComponent {
   constructor(props) {
     super(props);
     i18nConfig();
-    const brandStyle = themeTwo;
+    const brandStyle = themeOne;
     const nativeBaseTheme = themeConfig(brandStyle);
     this.state = {nativeBaseTheme, brandStyle};
   }
