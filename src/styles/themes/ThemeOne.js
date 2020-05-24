@@ -13,9 +13,9 @@ export const colors = {
   onSurface: '#000000',
   onSurfaceVariant: '#757575',
   onError: '#FFFFFF',
-  info: '#00529B',
-  error: '#D8000C',
-  warning: '#9F6000',
+  info: '#62B1F6',
+  error: '#d9534f',
+  warning: '#f0ad4e',
   success: '#4F8A10',
 };
 

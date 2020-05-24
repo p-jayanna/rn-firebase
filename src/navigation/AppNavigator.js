@@ -1,7 +1,7 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {useSelector} from 'react-redux';
-import StackNavigator from './StackNavigator';
+import HomeStack from './home/HomeStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -10,7 +10,7 @@ const AppNavigator = () => {
 
   return (
     <Drawer.Navigator initialRouteName="home">
-      <Drawer.Screen name="home" component={StackNavigator} />
+      <Drawer.Screen name="home" component={HomeStack} />
     </Drawer.Navigator>
   );
 };

@@ -1,15 +1,14 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-
-import LoginContainer from '../screens/containers/LoginContainer';
-import HomeContainer from '../screens/containers/HomeContainer';
-import ArticleContainer from '../screens/containers/ArticleContainer';
-import AppHeader from './header/Header';
-import {withBrandSettings} from '../styles/withBrandSettings';
+import HomeContainer from '../../screens/containers/HomeContainer';
+import ArticleContainer from '../../screens/containers/ArticleContainer';
+import AppHeader from '../header/Header';
+import {withBrandSettings} from '../../styles/withBrandSettings';
+import SearchContainer from '../../screens/containers/SearchContainer';
 
 const Stack = createStackNavigator();
 
-const StackNavigator = props => {
+const HomeStack = props => {
   const {colors} = props;
   return (
     <Stack.Navigator
@@ -34,14 +33,15 @@ const StackNavigator = props => {
         }}
       />
       <Stack.Screen
-        name="auth"
-        component={LoginContainer}
-        options={{
-          headerShown: false,
-        }}
+        name="search"
+        component={SearchContainer}
+        options={({navigation}) => ({
+          headerTitle: () => <AppHeader navigation={navigation} />,
+          headerLeft: null,
+        })}
       />
     </Stack.Navigator>
   );
 };
 
-export default withBrandSettings(StackNavigator);
+export default withBrandSettings(HomeStack);

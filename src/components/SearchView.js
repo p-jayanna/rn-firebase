@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import {withBrandSettings} from '../styles/withBrandSettings';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,7 +7,11 @@ const SearchView = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
+    onSearch,
   } = props;
+
+  const [searchKey, setSearchKey] = useState();
+
   const styles = _styles(colors, sharedStyle);
   return (
     <View style={styles.container}>
@@ -22,7 +26,11 @@ const SearchView = props => {
         </View>
         <TextInput
           style={styles.textView}
-          placeholder="Search here for vegetables"
+          placeholder="Search here!"
+          onChangeText={input => setSearchKey(input)}
+          onEndEditing={() => {
+            onSearch(searchKey);
+          }}
         />
         <TouchableOpacity style={styles.iconLocationStyle}>
           <Icon

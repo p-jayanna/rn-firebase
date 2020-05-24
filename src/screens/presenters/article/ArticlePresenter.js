@@ -1,10 +1,9 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
-import {withBrandSettings} from '../../styles/withBrandSettings';
-import {ScrollView} from 'react-native-gesture-handler';
-import AppTouchableOpacity from '../../components/AppTouchableOpacity';
-import ArticleDetails from './article/ArticleDetails';
-import UserCard from '../../components/UserCard';
+import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
+import ArticleDetails from './ArticleDetails';
+import UserCard from '../../../components/UserCard';
+import AppTouchableOpacity from '../../../components/AppTouchableOpacity';
+import {withBrandSettings} from '../../../styles/withBrandSettings';
 
 const ArticlePresenter = props => {
   const {

@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, FlatList, RefreshControl} from 'react-native';
 import {withBrandSettings} from '../../styles/withBrandSettings';
-import {translate} from '../../i18n/i18n';
-import SearchView from '../../components/SearchView';
 import MenuList from '../../components/MenuList';
 import {menu_data} from '../../utils/data/menu_data';
 import MenuCard from '../../components/MenuCard';
 import {card_data} from '../../utils/data/card_data';
-import {sharedStyle} from '../../styles/typography/sizes';
+import AppFloatingButton from '../../components/AppFloatingButton';
 
 const HomePresenter = props => {
   const {
@@ -61,6 +59,7 @@ const HomePresenter = props => {
           keyExtractor={item => item.id}
         />
       </View>
+      <AppFloatingButton />
     </View>
   );
 };

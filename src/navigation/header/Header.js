@@ -12,12 +12,17 @@ const AppHeader = props => {
   const drawSideMenu = () => {
     navigation.openDrawer();
   };
+
+  const onSearch = searchKey => {
+    navigation.navigate('search');
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={drawSideMenu}>
         <Icon name="ios-menu" size={30} color={colors.onPrimary} />
       </TouchableOpacity>
-      <SearchView />
+      <SearchView onSearch={onSearch} />
     </View>
   );
 };

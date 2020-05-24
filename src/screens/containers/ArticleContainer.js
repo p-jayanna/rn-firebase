@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import ArticlePresenter from '../presenters/ArticlePresenter';
+import ArticlePresenter from '../presenters/article/ArticlePresenter';
 
-class HomeContainer extends PureComponent {
+class ArticleContainer extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -21,4 +21,4 @@ const mapStateToProps = ({user: {user, auth}}) => {
   return {user, auth};
 };
 
-export default connect(mapStateToProps)(HomeContainer);
+export default connect(mapStateToProps)(ArticleContainer);

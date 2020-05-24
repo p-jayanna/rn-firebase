@@ -53,9 +53,9 @@ const ArticleDetails = props => {
             Fresh
           </Text>
         </View>
-        <View style={styles.badge}>
+        <View style={styles.badgeDanger}>
           <Text numberOfLines={1} style={styles.badgeText}>
-            Fresh
+            Limited
           </Text>
         </View>
       </View>
@@ -97,6 +97,12 @@ const _styles = (colors, sharedStyle) =>
     badge: {
       padding: sharedStyle.spacing.xs,
       backgroundColor: colors.success,
+      borderRadius: sharedStyle.spacing.xs,
+      marginHorizontal: sharedStyle.spacing.xs,
+    },
+    badgeDanger: {
+      padding: sharedStyle.spacing.xs,
+      backgroundColor: colors.warning,
       borderRadius: sharedStyle.spacing.xs,
       marginHorizontal: sharedStyle.spacing.xs,
     },
