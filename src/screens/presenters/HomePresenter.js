@@ -7,6 +7,7 @@ import MenuList from '../../components/MenuList';
 import {menu_data} from '../../utils/data/menu_data';
 import MenuCard from '../../components/MenuCard';
 import {card_data} from '../../utils/data/card_data';
+import {sharedStyle} from '../../styles/typography/sizes';
 
 const HomePresenter = props => {
   const {
@@ -31,9 +32,6 @@ const HomePresenter = props => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <SearchView />
-      </View>
       <View style={styles.menuContainer}>
         <FlatList
           data={menu_data}
@@ -74,17 +72,11 @@ const _styles = (colors, fontSize) =>
       display: 'flex',
       backgroundColor: colors.primary,
     },
-    searchContainer: {
-      flex: 2,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     menuContainer: {
-      flex: 2,
       backgroundColor: colors.surface,
     },
     bodyContainer: {
-      flex: 12,
+      flex: 1,
       backgroundColor: colors.background,
     },
     textStyle: {
