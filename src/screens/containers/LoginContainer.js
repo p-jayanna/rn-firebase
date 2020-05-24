@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import LoginPresenter from '../presenters/LoginPresenter';
 import {connect} from 'react-redux';
-import {USER_AUTH} from '../../store/actions/action-types';
 
 class LoginContainer extends PureComponent {
   constructor(props) {
@@ -11,13 +10,10 @@ class LoginContainer extends PureComponent {
   }
 
   componentDidMount() {
-    const {dispatch} = this.props;
+    const {navigation} = this.props;
     setTimeout(() => {
-      dispatch({
-        type: USER_AUTH,
-        payload: {isAuthenticated: true},
-      });
-    }, 5000);
+      navigation.navigate('home');
+    }, 1000);
   }
 
   render() {

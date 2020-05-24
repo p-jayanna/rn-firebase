@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {withBrandSettings} from '../../styles/withBrandSettings';
-import {translate} from '../../i18n/i18n';
 
-const LoginPresenter = props => {
+const UserPresenter = props => {
   console.log(props);
   const {
     colors,
@@ -14,7 +13,7 @@ const LoginPresenter = props => {
   const styles = _styles(colors, fontSize);
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}> {translate('welcome')} </Text>
+      <Text style={styles.textStyle}> User profile </Text>
     </View>
   );
 };
@@ -34,4 +33,4 @@ const _styles = (colors, fontSize) =>
     },
   });
 
-export default withBrandSettings(LoginPresenter);
+export default withBrandSettings(UserPresenter);

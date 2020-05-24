@@ -5,14 +5,18 @@ export const colors = {
   primaryVariant: '#3700B3',
   secondary: '#03DAC6',
   secondaryVariant: '#018786',
-  background: '#FFFFFF',
+  background: '#E0E0E0',
   surface: '#FFFFFF',
-  error: '#B00020',
   onPrimary: '#FFFFFF',
   onSecondary: '#000000',
   onBackground: '#000000',
   onSurface: '#000000',
+  onSurfaceVariant: '#757575',
   onError: '#FFFFFF',
+  info: '#00529B',
+  error: '#D8000C',
+  warning: '#9F6000',
+  success: '#4F8A10',
 };
 
 export const themeMode = {

@@ -9,8 +9,8 @@ const persistConfig = {
   timeout: 0,
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['user'],
-  // blacklist: ['favourites']
+  // whitelist: ['user'],
+  blacklist: ['user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

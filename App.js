@@ -57,7 +57,9 @@ class componentName extends PureComponent {
                   <Container>
                     <NavigationContainer>
                       <StatusBar
-                        backgroundColor={brandStyle.colors[currentTheme].header}
+                        backgroundColor={
+                          brandStyle.colors[currentTheme].primary
+                        }
                       />
                       <AppNavigator />
                     </NavigationContainer>

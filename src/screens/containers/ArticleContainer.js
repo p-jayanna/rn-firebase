@@ -1,22 +1,19 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {translate} from '../../i18n/i18n';
-import HomePresenter from '../presenters/HomePresenter';
+import ArticlePresenter from '../presenters/ArticlePresenter';
 
 class HomeContainer extends PureComponent {
   constructor(props) {
     super(props);
+
     this.state = {};
-    this.onArticlePress = this.onArticlePress.bind(this);
   }
 
-  onArticlePress = article => {
-    const {navigation} = this.props;
-    navigation.navigate('article', article);
-  };
-
   render() {
-    return <HomePresenter onArticlePress={this.onArticlePress} />;
+    const {
+      route: {params},
+    } = this.props;
+    return <ArticlePresenter article={params} />;
   }
 }
 
