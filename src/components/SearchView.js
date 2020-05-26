@@ -8,6 +8,7 @@ const SearchView = props => {
     colors,
     brandStyle: {sharedStyle},
     onSearch,
+    onLocationPress,
   } = props;
 
   const [searchKey, setSearchKey] = useState();
@@ -28,16 +29,18 @@ const SearchView = props => {
           style={styles.textView}
           placeholder="Search here!"
           onChangeText={input => setSearchKey(input)}
-          onEndEditing={() => {
+          onSubmitEditing={() => {
             onSearch(searchKey);
           }}
         />
-        <TouchableOpacity style={styles.iconLocationStyle}>
+        <TouchableOpacity
+          onPress={onLocationPress}
+          style={styles.iconLocationStyle}>
           <Icon
             active
             name="map-marker"
             color={colors.onSurfaceVariant}
-            size={sharedStyle.fontSize.md}
+            size={sharedStyle.fontSize.lg}
           />
         </TouchableOpacity>
       </View>
@@ -58,7 +61,7 @@ const _styles = (colors, sharedStyle) =>
       flex: 1,
     },
     iconLocationStyle: {
-      paddingHorizontal: sharedStyle.spacing.md,
+      paddingHorizontal: sharedStyle.spacing.lg,
       alignItems: 'center',
       justifyContent: 'center',
       borderBottomRightRadius: sharedStyle.borderRadius.xs,

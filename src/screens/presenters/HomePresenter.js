@@ -14,6 +14,7 @@ const HomePresenter = props => {
       sharedStyle: {fontSize},
     },
     onArticlePress,
+    onFloatingButtonPress,
   } = props;
 
   const [isLoading, setLoading] = useState(false);
@@ -59,7 +60,7 @@ const HomePresenter = props => {
           keyExtractor={item => item.id}
         />
       </View>
-      <AppFloatingButton />
+      <AppFloatingButton onFloatingButtonPress={onFloatingButtonPress}/>
     </View>
   );
 };

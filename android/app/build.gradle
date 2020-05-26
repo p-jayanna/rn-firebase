@@ -136,6 +136,7 @@ android {
         versionName "1.0"
         //dependency for react native camera 
         missingDimensionStrategy 'react-native-camera', 'general'
+        multiDexEnabled true
     }
     splits {
         abi {

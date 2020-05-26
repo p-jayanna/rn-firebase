@@ -17,12 +17,15 @@ const AppHeader = props => {
     navigation.navigate('search');
   };
 
+  const onLocationPress = searchKey => {
+    navigation.navigate('map');
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={drawSideMenu}>
         <Icon name="ios-menu" size={30} color={colors.onPrimary} />
       </TouchableOpacity>
-      <SearchView onSearch={onSearch} />
+      <SearchView onSearch={onSearch} onLocationPress={onLocationPress} />
     </View>
   );
 };

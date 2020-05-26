@@ -8,6 +8,7 @@ class HomeContainer extends PureComponent {
     super(props);
     this.state = {};
     this.onArticlePress = this.onArticlePress.bind(this);
+    this.onFloatingButtonPress = this.onFloatingButtonPress.bind(this);
   }
 
   onArticlePress = article => {
@@ -15,8 +16,18 @@ class HomeContainer extends PureComponent {
     navigation.navigate('article', article);
   };
 
+  onFloatingButtonPress = () => {
+    const {navigation} = this.props;
+    navigation.navigate('addarticle');
+  };
+
   render() {
-    return <HomePresenter onArticlePress={this.onArticlePress} />;
+    return (
+      <HomePresenter
+        onArticlePress={this.onArticlePress}
+        onFloatingButtonPress={this.onFloatingButtonPress}
+      />
+    );
   }
 }
 

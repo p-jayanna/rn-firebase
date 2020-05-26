@@ -7,10 +7,13 @@ const AppFloatingButton = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
+    onFloatingButtonPress,
   } = props;
   const styles = _styles(colors, sharedStyle);
   return (
-    <TouchableOpacity style={styles.floatingButton}>
+    <TouchableOpacity
+      onPress={onFloatingButtonPress}
+      style={styles.floatingButton}>
       <Icon name="ios-add" size={50} color={colors.primary} />
     </TouchableOpacity>
   );

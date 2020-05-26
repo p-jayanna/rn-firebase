@@ -5,6 +5,8 @@ import ArticleContainer from '../../screens/containers/ArticleContainer';
 import AppHeader from '../header/Header';
 import {withBrandSettings} from '../../styles/withBrandSettings';
 import SearchContainer from '../../screens/containers/SearchContainer';
+import MapContainer from '../../screens/containers/MapContainer';
+import AddArticleContainer from '../../screens/containers/AddArticleContainer';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +41,20 @@ const HomeStack = props => {
           headerTitle: () => <AppHeader navigation={navigation} />,
           headerLeft: null,
         })}
+      />
+      <Stack.Screen
+        name="map"
+        component={MapContainer}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="addarticle"
+        component={AddArticleContainer}
+        options={{
+          headerShown: false,
+        }}
       />
     </Stack.Navigator>
   );

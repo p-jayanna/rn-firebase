@@ -19,7 +19,7 @@ const MenuCard = props => {
           onArticlePress(article);
         }}>
         <View style={styles.cardContainer}>
-          <View style={styles.bodyArea}>
+          <View style={styles.imageArea}>
             <Image style={styles.image} source={image_path} />
           </View>
           <View style={styles.footerArea}>
@@ -59,12 +59,12 @@ const _styles = (colors, sharedStyle) =>
     cardContainer: {
       flex: 1,
       flexDirection: 'column',
-      height: 200,
+      height: 250,
       borderRadius: sharedStyle.borderRadius.xs,
       backgroundColor: colors.surface,
     },
     image: {flex: 1, height: undefined, width: undefined},
-    bodyArea: {
+    imageArea: {
       flex: 1,
     },
     footerArea: {
