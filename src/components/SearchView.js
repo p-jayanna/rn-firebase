@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import {withBrandSettings} from '../styles/withBrandSettings';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {translate} from '../i18n/i18n';
 
 const SearchView = props => {
   const {
@@ -27,7 +28,7 @@ const SearchView = props => {
         </View>
         <TextInput
           style={styles.textView}
-          placeholder="Search here!"
+          placeholder={translate('search_main')}
           onChangeText={input => setSearchKey(input)}
           onSubmitEditing={() => {
             onSearch(searchKey);

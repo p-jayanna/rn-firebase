@@ -1,7 +1,8 @@
 import React from 'react';
 import {withBrandSettings} from '../styles/withBrandSettings';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { translate } from '../i18n/i18n';
 
 const MenuList = props => {
   const {
@@ -13,14 +14,16 @@ const MenuList = props => {
 
   const styles = _styles(colors, sharedStyle);
   return (
-    <View style={styles.container}>
-      <MaterialCommunityIcons
-        name={name}
-        size={30}
-        color={colors.primaryVariant}
-      />
-      <Text style={styles.menuText}>{title} </Text>
-    </View>
+    <TouchableOpacity>
+      <View style={styles.container}>
+        <MaterialCommunityIcons
+          name={name}
+          size={30}
+          color={colors.primaryVariant}
+        />
+        <Text style={styles.menuText}>{translate(title)} </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

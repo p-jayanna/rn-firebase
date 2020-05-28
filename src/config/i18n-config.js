@@ -5,10 +5,12 @@ import de from '../i18n/de';
 import {I18nManager} from 'react-native';
 import moment from 'moment';
 import {translate} from '../i18n/i18n';
+import kn from '../i18n/kn';
 
 export const translationGetters = {
   en: () => en,
   de: () => de,
+  kn: () => kn,
 };
 
 export const i18nConfig = () => {

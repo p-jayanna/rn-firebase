@@ -1,42 +1,42 @@
 export const menu_data = [
   {
     id: '1',
-    title: 'Veges',
+    title: 'vegetables',
     name: 'carrot',
   },
   {
     id: '8',
-    title: 'Poultry',
+    title: 'poultry',
     name: 'twitter',
   },
   {
     id: '3',
-    title: 'Fruits',
+    title: 'fruits',
     name: 'apple',
   },
   {
     id: '4',
-    title: 'Dairy',
+    title: 'dairy',
     name: 'cow',
   },
   {
     id: '7',
-    title: 'Animals',
+    title: 'animals',
     name: 'pig',
   },
   {
     id: '5',
-    title: 'Nursery',
+    title: 'nursery',
     name: 'leaf-maple',
   },
   {
     id: '6',
-    title: 'Flowers',
+    title: 'flowers',
     name: 'flower',
   },
   {
     id: '2',
-    title: 'Grains',
+    title: 'grains',
     name: 'barley',
   },
 ];
