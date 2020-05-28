@@ -11,5 +11,6 @@ const kn = {
   flowers: 'ಹೂವು',
   grains: 'ಧಾನ್ಯ',
   search_main: 'ಇಲ್ಲಿ ಹುಡುಕಿ..!',
+  praveen: 'ಪ್ರವೀಣ್',
 };
 export default kn;
