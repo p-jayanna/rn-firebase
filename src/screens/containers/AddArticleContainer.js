@@ -7,10 +7,14 @@ class AddArticleContainer extends PureComponent {
     super(props);
     console.log(this.props);
     this.state = {};
-   }
-
+    this.onOpenCameraPress = this.onOpenCameraPress.bind(this);
+  }
+  onOpenCameraPress = () => {
+    const {navigation} = this.props;
+    navigation.navigate('camera');
+  };
   render() {
-    return <AddArticlePresenter />;
+    return <AddArticlePresenter onOpenCameraPress={this.onOpenCameraPress} />;
   }
 }
 

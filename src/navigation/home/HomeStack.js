@@ -7,6 +7,7 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import SearchContainer from '../../screens/containers/SearchContainer';
 import MapContainer from '../../screens/containers/MapContainer';
 import AddArticleContainer from '../../screens/containers/AddArticleContainer';
+import CameraContainer from '../../screens/containers/CameraContainer';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +53,13 @@ const HomeStack = props => {
       <Stack.Screen
         name="addarticle"
         component={AddArticleContainer}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="camera"
+        component={CameraContainer}
         options={{
           headerShown: false,
         }}
