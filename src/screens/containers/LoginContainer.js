@@ -17,12 +17,16 @@ class LoginContainer extends PureComponent {
   }
 
   render() {
-    return <LoginPresenter />;
+    const {
+      device: {fcmToken},
+    } = this.props;
+    console.log(fcmToken);
+    return <LoginPresenter fcmToken={fcmToken} />;
   }
 }
 
-const mapStateToProps = ({user: {auth = {}}}) => {
-  return auth;
+const mapStateToProps = ({device = {}}) => {
+  return {device};
 };
 
 export default connect(mapStateToProps)(LoginContainer);

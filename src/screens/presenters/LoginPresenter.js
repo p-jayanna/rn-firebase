@@ -1,20 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Clipboard} from 'react-native';
 import {withBrandSettings} from '../../styles/withBrandSettings';
 import {translate} from '../../i18n/i18n';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const LoginPresenter = props => {
-  console.log(props);
   const {
     colors,
     brandStyle: {
       sharedStyle: {fontSize},
     },
+    fcmToken,
   } = props;
+
+  const copyToken = () => {
+    Clipboard.setString(fcmToken);
+  };
+
   const styles = _styles(colors, fontSize);
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}> {translate('welcome')} </Text>
+      <TouchableOpacity onPress={copyToken}>
+        <Text style={styles.textStyle}> {translate('welcome')} </Text>
+      </TouchableOpacity>
     </View>
   );
 };
