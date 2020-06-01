@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, RefreshControl, FlatList} from 'react-native';
 import {withBrandSettings} from '../../styles/withBrandSettings';
-import {translate} from '../../i18n/i18n';
-import {card_data} from '../../utils/data/card_data';
 import MenuCardSearch from '../../components/MenuCardSearch';
 
 const SearchPresenter = props => {
@@ -13,6 +11,7 @@ const SearchPresenter = props => {
       sharedStyle: {fontSize},
     },
     onArticlePress,
+    articles,
   } = props;
   const [isLoading, setLoading] = useState(false);
 
@@ -30,12 +29,12 @@ const SearchPresenter = props => {
     <View style={styles.container}>
       <View style={styles.filterContainer}>
         <Text style={{color: colors.onPrimary}}>
-          {'coming soon --- filters'}{' '}
+          {'coming soon --- filters'}
         </Text>
       </View>
       <View style={styles.bodyContainer}>
         <FlatList
-          data={card_data}
+          data={articles}
           showsHorizontalScrollIndicator={false}
           refreshControl={
             <RefreshControl

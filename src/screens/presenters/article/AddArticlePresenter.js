@@ -1,56 +1,108 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import AppTouchableOpacity from '../../../components/AppTouchableOpacity';
 import {withBrandSettings} from '../../../styles/withBrandSettings';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AppTextInput from '../../../components/AppTextInput';
+import {translationKeys} from '../../../services/constants';
+import {translate} from '../../../i18n/i18n';
 
 const AddArticlePresenter = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
     onOpenCameraPress,
+    onPublishArticlePress,
+    imageBase64,
   } = props;
+
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState('');
+  const [description, setDescription] = useState('');
+
   const styles = _styles(colors, sharedStyle);
+
+  const onPublishPress = () => {
+    if (title.length > 2 && description.length > 2) {
+      onPublishArticlePress({
+        title,
+        price,
+        quantity,
+        description,
+      });
+    }
+  };
 
   return (
     <View style={styles.container}>
       <ScrollView>
-        <View style={styles.imageContainer}>
-          <TouchableOpacity onPress={onOpenCameraPress}>
-            <Icon
-              name="camera"
-              color={colors.background}
-              size={sharedStyle.fontSize.xl * 2}
+        {imageBase64 ? (
+          <View style={styles.imageContainer}>
+            <Image
+              source={{uri: `data:image/gif;base64,${imageBase64}`}}
+              style={styles.image}
             />
-          </TouchableOpacity>
-          <Text style={styles.iconDescriptionText}>
-            Add photos or 30 seconds video
-          </Text>
+          </View>
+        ) : (
+          <View style={styles.cameraContainer}>
+            <TouchableOpacity onPress={onOpenCameraPress}>
+              <Icon
+                name="camera"
+                color={colors.background}
+                size={sharedStyle.fontSize.xl * 2}
+              />
+            </TouchableOpacity>
+            <Text style={styles.iconDescriptionText}>
+              {translate(translationKeys.add_photos)}
+            </Text>
+          </View>
+        )}
+        <View style={styles.titleArea}>
+          <AppTextInput
+            placeHolderKey={translationKeys.title}
+            keyboardType={'default'}
+            multiline={true}
+            onChangeText={text => setTitle(text)}
+          />
         </View>
         <View style={styles.detailsArea}>
-          <Text>Add title amd select category</Text>
-        </View>
-        <View style={styles.detailsArea}>
-          <Text>Add some details here</Text>
+          <AppTextInput
+            placeHolderKey={translationKeys.price}
+            keyboardType={'decimal-pad'}
+            onChangeText={number => setPrice(number)}
+            iconName={'rupee'}
+          />
+          <AppTextInput
+            placeHolderKey={translationKeys.quantity}
+            keyboardType={'default'}
+            onChangeText={text => setQuantity(text)}
+          />
         </View>
         <View style={styles.descriptionArea}>
-          <Text style={styles.titleText}>Description</Text>
-
-          <Text style={styles.descriptionText}>
-            {
-              'Vegetables are parts of plants that are consumed by humans or other animals as food. The original meaning is still commonly used and is applied to plants collectively to refer to all edible plant matter, including the flowers, fruits, stems, leaves, roots, and seeds. The alternate definition of the term is applied somewhat arbitrarily, often by culinary and cultural tradition. It may exclude foods derived from some plants that are fruits, flowers, nuts, and cereal grains, but include savoury fruits such as tomatoes and courgettes, flowers such as broccoli, and seeds such as pulses.'
-            }
-          </Text>
+          <AppTextInput
+            placeHolderKey={translationKeys.description}
+            keyboardType={'default'}
+            multiline={true}
+            onChangeText={text => setDescription(text)}
+          />
         </View>
       </ScrollView>
       <View style={styles.bottomFixed}>
-        <AppTouchableOpacity name={'Publish Article'} icon={'upload'} />
+        <AppTouchableOpacity
+          name={translate(translationKeys.publish)}
+          icon={'upload'}
+          onPress={() => {
+            onPublishPress();
+          }}
+        />
       </View>
     </View>
   );
@@ -64,9 +116,8 @@ const _styles = (colors, sharedStyle) =>
       backgroundColor: colors.background,
     },
     titleArea: {
-      justifyContent: 'flex-start',
+      paddingVertical: sharedStyle.spacing.default,
       backgroundColor: colors.surface,
-      paddingVertical: sharedStyle.spacing.md,
       paddingHorizontal: sharedStyle.spacing.xs,
     },
     titleText: {
@@ -74,18 +125,25 @@ const _styles = (colors, sharedStyle) =>
       color: colors.onSurface,
       fontWeight: 'bold',
     },
-    imageContainer: {
+    cameraContainer: {
       height: 250,
       backgroundColor: colors.surface,
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
     },
+    imageContainer: {
+      flex: 1,
+      flexShrink: 1,
+      height: 250,
+    },
     iconDescriptionText: {
       color: colors.onSurfaceVariant,
     },
     image: {flex: 1, height: undefined, width: undefined},
     detailsArea: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       marginTop: sharedStyle.spacing.default,
       paddingVertical: sharedStyle.spacing.default,
       backgroundColor: colors.surface,

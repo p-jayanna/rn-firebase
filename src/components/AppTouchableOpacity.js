@@ -9,12 +9,13 @@ const AppTouchableOpacity = props => {
     icon,
     colors,
     brandStyle: {sharedStyle},
+    onPress,
   } = props;
 
   const styles = _styles(colors, sharedStyle);
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Icon
         name={icon}
         size={sharedStyle.fontSize.md}

@@ -10,7 +10,7 @@ const MenuCardSearch = props => {
     brandStyle: {sharedStyle},
     onArticlePress,
   } = props;
-  const {title, price, place, quantity, image_path} = article;
+  const {title, price, place, quantity, imagePath} = article;
   const styles = _styles(colors, sharedStyle);
   return (
     <View style={styles.container}>
@@ -20,7 +20,10 @@ const MenuCardSearch = props => {
         }}>
         <View style={styles.cardContainer}>
           <View style={styles.imageContainer}>
-            <Image style={styles.image} source={image_path} />
+            <Image
+              style={styles.image}
+              source={{uri: `data:image/jpeg;base64,${imagePath}`}}
+            />
           </View>
           <View style={styles.detailsContainer}>
             <View>

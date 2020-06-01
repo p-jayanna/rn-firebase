@@ -6,7 +6,6 @@ const initialUserState = {
 
 const deviceReducer = (state = initialUserState, action) => {
   const {type, payload} = action;
-  console.log(action);
   switch (type) {
     case FCM_TOKEN: {
       return {

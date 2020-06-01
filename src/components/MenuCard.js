@@ -10,7 +10,7 @@ const MenuCard = props => {
     brandStyle: {sharedStyle},
     onArticlePress,
   } = props;
-  const {title, price, place, quantity, image_path} = article;
+  const {title, price, place, quantity, imagePath} = article;
   const styles = _styles(colors, sharedStyle);
   return (
     <View style={styles.container}>
@@ -20,7 +20,10 @@ const MenuCard = props => {
         }}>
         <View style={styles.cardContainer}>
           <View style={styles.imageArea}>
-            <Image style={styles.image} source={image_path} />
+            <Image
+              style={styles.image}
+              source={{uri: `data:image/gif;base64,${imagePath}`}}
+            />
           </View>
           <View style={styles.footerArea}>
             <View style={styles.locationContainer}>
@@ -52,7 +55,6 @@ const MenuCard = props => {
 const _styles = (colors, sharedStyle) =>
   StyleSheet.create({
     container: {
-      flexDirection: 'row',
       flex: 1,
       padding: sharedStyle.spacing.xs,
     },

@@ -4,17 +4,17 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import AppCamera from '../../components/AppCamera';
 
 const CameraPresenter = props => {
-  console.log(props);
   const {
     colors,
     brandStyle: {
       sharedStyle: {fontSize},
     },
+    onImageCapture,
   } = props;
   const styles = _styles(colors, fontSize);
   return (
     <View style={styles.container}>
-      <AppCamera />
+      <AppCamera onImageCapture={onImageCapture} />
     </View>
   );
 };

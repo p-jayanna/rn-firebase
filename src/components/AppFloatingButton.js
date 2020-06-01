@@ -29,6 +29,8 @@ const _styles = (colors, sharedStyle) =>
       right: sharedStyle.spacing.md,
       height: sharedStyle.fontSize.xl * 2,
       backgroundColor: colors.surface,
+      borderWidth: 0.5,
+      borderColor: colors.background,
       borderRadius: 100,
     },
   });

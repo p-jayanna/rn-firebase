@@ -11,5 +11,11 @@ const kn = {
   flowers: 'ಹೂವು',
   grains: 'ಧಾನ್ಯ',
   search_main: 'ಇಲ್ಲಿ ಹುಡುಕಿ..!',
+  title: 'ಸಣ್ಣ ವಿವರಣೆ',
+  description: 'ವಿವರಣೆ',
+  price: 'ಬೆಲೆ',
+  quantity: 'ಪ್ರಮಾಣ',
+  publish: 'ವಸ್ತುವನ್ನು  ಪ್ರಕಟಿಸಿ',
+  add_photos: 'ಫೋಟೋಗಳನ್ನು ಹಾಕಿ / ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
 };
 export default kn;

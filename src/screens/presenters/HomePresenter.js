@@ -4,22 +4,20 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import MenuList from '../../components/MenuList';
 import {menu_data} from '../../utils/data/menu_data';
 import MenuCard from '../../components/MenuCard';
-import {card_data} from '../../utils/data/card_data';
 import AppFloatingButton from '../../components/AppFloatingButton';
 
 const HomePresenter = props => {
   const {
     colors,
-    brandStyle: {
-      sharedStyle: {fontSize},
-    },
+    brandStyle: {sharedStyle},
     onArticlePress,
     onFloatingButtonPress,
+    articles,
   } = props;
 
   const [isLoading, setLoading] = useState(false);
 
-  const styles = _styles(colors, fontSize);
+  const styles = _styles(colors, sharedStyle);
 
   const onListRefresh = () => {
     setLoading(true);
@@ -44,7 +42,7 @@ const HomePresenter = props => {
       </View>
       <View style={styles.bodyContainer}>
         <FlatList
-          data={card_data}
+          data={articles}
           numColumns={2}
           showsHorizontalScrollIndicator={false}
           refreshControl={
@@ -60,17 +58,17 @@ const HomePresenter = props => {
           keyExtractor={item => item.id}
         />
       </View>
-      <AppFloatingButton onFloatingButtonPress={onFloatingButtonPress}/>
+      <AppFloatingButton onFloatingButtonPress={onFloatingButtonPress} />
     </View>
   );
 };
 
-const _styles = (colors, fontSize) =>
+const _styles = (colors, sharedStyle) =>
   StyleSheet.create({
     container: {
       flex: 1,
       display: 'flex',
-      backgroundColor: colors.primary,
+      backgroundColor: 'transparent',
     },
     menuContainer: {
       backgroundColor: colors.surface,
@@ -80,7 +78,7 @@ const _styles = (colors, fontSize) =>
       backgroundColor: colors.background,
     },
     textStyle: {
-      fontSize: fontSize.xl,
+      fontSize: sharedStyle.fontSize.xl,
       color: colors.onPrimary,
     },
   });

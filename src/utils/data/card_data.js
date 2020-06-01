@@ -5,7 +5,7 @@ export const card_data = [
     price: '5000 ₹',
     quantity: 'per Acre',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/ragi.jpg'),
+    imagePath: require('../../assets/ragi.jpg'),
   },
   {
     id: '2',
@@ -13,7 +13,7 @@ export const card_data = [
     price: '50,000 ₹',
     quantity: 'per Acre',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/tomato.jpeg'),
+    imagePath: require('../../assets/tomato.jpeg'),
   },
   {
     id: '3',
@@ -21,7 +21,7 @@ export const card_data = [
     price: '10 ₹',
     quantity: 'per Kg',
     place: 'Kalsapura, Chickmagalur',
-    image_path: require('../../assets/bittergaurd.jpg'),
+    imagePath: require('../../assets/bittergaurd.jpg'),
   },
   {
     id: '4',
@@ -29,7 +29,7 @@ export const card_data = [
     price: '500 ₹',
     quantity: 'per Kg',
     place: 'Nittur, Hassan',
-    image_path: require('../../assets/goat.jpg'),
+    imagePath: require('../../assets/goat.jpg'),
   },
   {
     id: '5',
@@ -37,7 +37,7 @@ export const card_data = [
     price: '20 ₹',
     quantity: 'per Piece',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/mango.jpg'),
+    imagePath: require('../../assets/mango.jpg'),
   },
   {
     id: '6',
@@ -45,7 +45,7 @@ export const card_data = [
     price: '50 ₹',
     quantity: 'per Kg',
     place: 'Belur, Hassan',
-    image_path: require('../../assets/papaya.jpg'),
+    imagePath: require('../../assets/papaya.jpg'),
   },
   {
     id: '7',
@@ -53,7 +53,7 @@ export const card_data = [
     price: '100,000 ₹',
     quantity: 'per Acre',
     place: 'Kattethimmanahalli, Chickmaglore',
-    image_path: require('../../assets/pomogrante.jpg'),
+    imagePath: require('../../assets/pomogrante.jpg'),
   },
   {
     id: '8',
@@ -61,7 +61,7 @@ export const card_data = [
     price: '15 ₹',
     quantity: 'per Piece',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/eggs.jpg'),
+    imagePath: require('../../assets/eggs.jpg'),
   },
   {
     id: '9',
@@ -69,7 +69,7 @@ export const card_data = [
     price: '500 ₹',
     quantity: 'per KG',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/sheep.jpg'),
+    imagePath: require('../../assets/sheep.jpg'),
   },
   {
     id: '10',
@@ -77,7 +77,7 @@ export const card_data = [
     price: '315 ₹',
     quantity: 'per Kg',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/cow.jpg'),
+    imagePath: require('../../assets/cow.jpg'),
   },
   {
     id: '11',
@@ -85,6 +85,6 @@ export const card_data = [
     price: '2000 ₹',
     quantity: 'per Quintal',
     place: 'Javagal, Hassan',
-    image_path: require('../../assets/potato.jpg'),
+    imagePath: require('../../assets/potato.jpg'),
   },
 ];

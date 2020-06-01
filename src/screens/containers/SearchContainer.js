@@ -16,12 +16,18 @@ class SearchContainer extends PureComponent {
   };
 
   render() {
-    return <SearchPresenter onArticlePress={this.onArticlePress} />;
+    const {articles} = this.props;
+    return (
+      <SearchPresenter
+        onArticlePress={this.onArticlePress}
+        articles={articles}
+      />
+    );
   }
 }
 
-const mapStateToProps = ({user: {user, auth}}) => {
-  return {user, auth};
+const mapStateToProps = ({user: {user, auth}, articles: {articles = []}}) => {
+  return {user, auth, articles};
 };
 
 export default connect(mapStateToProps)(SearchContainer);

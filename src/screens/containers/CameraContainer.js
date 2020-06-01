@@ -8,9 +8,13 @@ class CameraContainer extends PureComponent {
     console.log(this.props);
     this.state = {};
   }
+  onImageCapture = capturedImage => {
+    const {navigation} = this.props;
+    navigation.navigate('addarticle', capturedImage);
+  };
 
   render() {
-    return <CameraPresenter />;
+    return <CameraPresenter onImageCapture={this.onImageCapture} />;
   }
 }
 

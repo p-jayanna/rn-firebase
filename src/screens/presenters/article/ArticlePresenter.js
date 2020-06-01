@@ -11,8 +11,9 @@ const ArticlePresenter = props => {
     brandStyle: {sharedStyle},
     article,
   } = props;
+  console.log(article);
   const styles = _styles(colors, sharedStyle);
-  const {title, price, place, quantity, image_path} = article;
+  const {title, price, place, quantity, imagePath} = article;
 
   return (
     <View style={styles.container}>
@@ -21,7 +22,10 @@ const ArticlePresenter = props => {
           <Text style={styles.titleText}>{title}</Text>
         </View>
         <View style={styles.imageContainer}>
-          <Image style={styles.image} source={image_path} />
+          <Image
+            style={styles.image}
+            source={{uri: `data:image/gif;base64,${imagePath}`}}
+          />
         </View>
         <View style={styles.detailsArea}>
           <ArticleDetails price={price} quantity={quantity} place={place} />
@@ -67,6 +71,8 @@ const _styles = (colors, sharedStyle) =>
       fontWeight: 'bold',
     },
     imageContainer: {
+      flex: 1,
+      flexShrink: 1,
       height: 250,
     },
     image: {flex: 1, height: undefined, width: undefined},

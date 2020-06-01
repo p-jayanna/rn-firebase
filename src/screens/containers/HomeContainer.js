@@ -22,17 +22,19 @@ class HomeContainer extends PureComponent {
   };
 
   render() {
+    const {articles} = this.props;
     return (
       <HomePresenter
         onArticlePress={this.onArticlePress}
         onFloatingButtonPress={this.onFloatingButtonPress}
+        articles={articles}
       />
     );
   }
 }
 
-const mapStateToProps = ({user: {user, auth}}) => {
-  return {user, auth};
+const mapStateToProps = ({user: {user, auth}, articles: {articles = []}}) => {
+  return {user, auth, articles};
 };
 
 export default connect(mapStateToProps)(HomeContainer);
