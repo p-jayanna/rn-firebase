@@ -1,7 +1,6 @@
 import React from 'react';
 import {withBrandSettings} from '../styles/withBrandSettings';
 import {StyleSheet, View, Text} from 'react-native';
-import {Rating} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const UserCard = props => {
@@ -21,12 +20,6 @@ const UserCard = props => {
       <View style={styles.userBio}>
         <Text style={styles.userName}>RangeGowda</Text>
         <Text>Tomato Belegara</Text>
-        <Rating
-          style={{alignItems: 'flex-start'}}
-          imageSize={22}
-          fractions={1}
-          startingValue={3.3}
-        />
       </View>
     </View>
   );

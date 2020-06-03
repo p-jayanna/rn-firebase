@@ -1,20 +1,43 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {useSelector} from 'react-redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import HomeStack from './home/HomeStack';
 import LoginContainer from '../screens/containers/LoginContainer';
+import AppDrawerContent from './drawer/AppDrawerContent';
+import {withBrandSettings} from '../styles/withBrandSettings';
 
 const Drawer = createDrawerNavigator();
 
-const AppNavigator = () => {
+const AppNavigator = styleProps => {
   const isAuthenticated = useSelector(state => state.user.auth.isAuthenticated);
+  const {colors} = styleProps;
 
   return (
-    <Drawer.Navigator initialRouteName="welcome">
-      <Drawer.Screen name="home" component={HomeStack} />
-      <Drawer.Screen name="welcome" component={LoginContainer} />
+    <Drawer.Navigator
+      initialRouteName="Welcome"
+      drawerContent={props => <AppDrawerContent {...props} />}>
+      <Drawer.Screen
+        name="Home"
+        component={HomeStack}
+        options={{
+          drawerIcon: () => (
+            <Icon size={20} name={'home'} color={colors.primary} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Welcome"
+        component={LoginContainer}
+        options={{
+          drawerIcon: () => (
+            <Icon size={20} name={'android'} color={colors.primary} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 };
 
-export default AppNavigator;
+export default withBrandSettings(AppNavigator);

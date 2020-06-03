@@ -12,7 +12,7 @@ class LoginContainer extends PureComponent {
   componentDidMount() {
     const {navigation} = this.props;
     setTimeout(() => {
-      navigation.navigate('home');
+      navigation.navigate('Home');
     }, 1000);
   }
 
