@@ -5,15 +5,27 @@ import ArticlePresenter from '../presenters/article/ArticlePresenter';
 class ArticleContainer extends PureComponent {
   constructor(props) {
     super(props);
-
     this.state = {};
+    this.onUserCardPressed = this.onUserCardPressed.bind(this);
   }
+
+  onUserCardPressed = () => {
+    const {navigation} = this.props;
+    navigation.navigate('user');
+  };
 
   render() {
     const {
       route: {params},
+      user,
     } = this.props;
-    return <ArticlePresenter article={params} />;
+    return (
+      <ArticlePresenter
+        article={params}
+        user={user}
+        onUserCardPressed={this.onUserCardPressed}
+      />
+    );
   }
 }
 

@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import ArticleDetails from './ArticleDetails';
 import UserCard from '../../../components/UserCard';
 import AppTouchableOpacity from '../../../components/AppTouchableOpacity';
@@ -10,8 +18,10 @@ const ArticlePresenter = props => {
     colors,
     brandStyle: {sharedStyle},
     article,
+    user,
+    onUserCardPressed,
   } = props;
-  console.log(article);
+
   const styles = _styles(colors, sharedStyle);
   const {title, price, place, quantity, imagePath} = article;
 
@@ -21,7 +31,7 @@ const ArticlePresenter = props => {
         <View style={styles.titleArea}>
           <Text style={styles.titleText}>{title}</Text>
         </View>
-        <View style={styles.imageContainer}>
+        <View horizontal={true} style={styles.imageContainer}>
           <Image
             style={styles.image}
             source={{uri: `data:image/gif;base64,${imagePath}`}}
@@ -41,7 +51,14 @@ const ArticlePresenter = props => {
         </View>
         <View style={styles.userArea}>
           <Text style={styles.titleText}>Provider</Text>
-          <UserCard />
+          <TouchableOpacity style={styles.userBody} onPress={onUserCardPressed}>
+            <UserCard user={user} />
+            <Icon
+              name="angle-right"
+              size={sharedStyle.fontSize.xl}
+              color={colors.onSurfaceVariant}
+            />
+          </TouchableOpacity>
         </View>
       </ScrollView>
       <View style={styles.bottomFixed}>
@@ -72,7 +89,6 @@ const _styles = (colors, sharedStyle) =>
     },
     imageContainer: {
       flex: 1,
-      flexShrink: 1,
       height: 250,
     },
     image: {flex: 1, height: undefined, width: undefined},
@@ -93,6 +109,11 @@ const _styles = (colors, sharedStyle) =>
       marginVertical: sharedStyle.spacing.default,
       backgroundColor: colors.surface,
       padding: sharedStyle.spacing.md,
+    },
+    userBody: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
     },
     bottomFixed: {
       flexDirection: 'row',

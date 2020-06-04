@@ -4,25 +4,26 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import {
   DrawerContentScrollView,
   DrawerItemList,
-  DrawerItem,
 } from '@react-navigation/drawer';
 import UserCard from '../../components/UserCard';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {store} from '../../store';
 
 const DrawerContent = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
   } = props;
+  const {user: {user = {}} = {}} = store.getState();
   const styles = _styles(colors, sharedStyle);
 
   return (
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
         <View style={styles.userArea}>
-          <UserCard />
-          <Text style={styles.emailText}>raganna@gmail.com</Text>
+          <UserCard user={user} />
+          <Text style={styles.emailText}>{user.email}</Text>
         </View>
         <DrawerItemList {...props} />
         <TouchableOpacity style={styles.signOutArea}>

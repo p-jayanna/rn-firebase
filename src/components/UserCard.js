@@ -7,6 +7,7 @@ const UserCard = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
+    user: {name = '', about = ''},
   } = props;
 
   const styles = _styles(colors, sharedStyle);
@@ -18,8 +19,8 @@ const UserCard = props => {
         size={sharedStyle.fontSize.xl * 2}
       />
       <View style={styles.userBio}>
-        <Text style={styles.userName}>RangeGowda</Text>
-        <Text>Tomato Belegara</Text>
+        <Text style={styles.userName}>{name}</Text>
+        <Text>{about}</Text>
       </View>
     </View>
   );
