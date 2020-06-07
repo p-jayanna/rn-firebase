@@ -36,6 +36,15 @@ const AppNavigator = styleProps => {
           ),
         }}
       />
+      <Drawer.Screen
+        name="Logout"
+        component={HomeStack}
+        options={{
+          drawerIcon: () => (
+            <Icon size={20} name={'sign-out'} color={colors.primary} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 };

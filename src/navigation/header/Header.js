@@ -6,7 +6,11 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const AppHeader = props => {
-  const {colors, sharedStyle, navigation} = props;
+  const {
+    colors,
+    brandStyle: {sharedStyle},
+    navigation,
+  } = props;
   const styles = _styles(colors, sharedStyle);
 
   const drawSideMenu = () => {
@@ -38,7 +42,7 @@ const _styles = (colors, sharedStyle) =>
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: 5,
+      padding: sharedStyle.spacing.md,
     },
   });
 export default withBrandSettings(AppHeader);
