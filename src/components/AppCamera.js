@@ -40,8 +40,8 @@ const AppCamera = props => {
               style={styles.capture}>
               <Icon
                 name="camera"
-                color={colors.background}
-                size={sharedStyle.fontSize.xl}
+                color={colors.primary}
+                size={sharedStyle.fontSize.xl * 2}
               />
             </TouchableOpacity>
           </View>
@@ -58,10 +58,16 @@ const _styles = (colors, sharedStyle) =>
       height: '100%',
       width: '100%',
     },
+    capture:{
+      padding: sharedStyle.spacing.default,
+    },
     bottomFixed: {
-      alignSelf: 'center',
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
       position: 'absolute',
-      bottom: sharedStyle.spacing.md,
+      backgroundColor: colors.background,
+      bottom: 0,
     },
   });
 

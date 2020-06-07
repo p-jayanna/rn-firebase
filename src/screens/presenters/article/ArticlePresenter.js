@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  Linking,
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -65,7 +66,13 @@ const ArticlePresenter = props => {
       </ScrollView>
       <View style={styles.bottomFixed}>
         <AppTouchableOpacity name={'Message'} icon={'envelope'} />
-        <AppTouchableOpacity name={'Call'} icon={'phone'} />
+        <AppTouchableOpacity
+          name={'Call'}
+          onPress={() => {
+            Linking.openURL('tel:22222');
+          }}
+          icon={'phone'}
+        />
       </View>
     </View>
   );
