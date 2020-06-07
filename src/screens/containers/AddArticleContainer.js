@@ -21,9 +21,7 @@ class AddArticleContainer extends PureComponent {
     const {
       dispatch,
       navigation,
-      route: {
-        params: {base64 = ''},
-      },
+      route: {params: {base64 = ''} = {}},
     } = this.props;
 
     const article = {

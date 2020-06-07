@@ -18,7 +18,7 @@ class LoginContainer extends PureComponent {
 
   render() {
     const {
-      device: {fcmToken},
+      device: {fcmToken = ''},
     } = this.props;
     console.log(fcmToken);
     return <LoginPresenter fcmToken={fcmToken} />;

@@ -18,6 +18,7 @@ const LoginPresenter = props => {
   };
 
   const styles = _styles(colors, fontSize);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={copyToken}>

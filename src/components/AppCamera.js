@@ -18,7 +18,6 @@ const AppCamera = props => {
     const options = {quality: 0.2, height: 400, width: 800, base64: true};
     const data = await camera.takePictureAsync(options);
     onImageCapture(data);
-    console.log(data);
   };
 
   return (
