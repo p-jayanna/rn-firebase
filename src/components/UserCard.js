@@ -7,7 +7,7 @@ const UserCard = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
-    user: {name = '', about = ''},
+    user: {name = '', about = ''} = {},
   } = props;
 
   const styles = _styles(colors, sharedStyle);

@@ -5,17 +5,32 @@ import {connect} from 'react-redux';
 class UserContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
+    this.onArticlePress = this.onArticlePress.bind(this);
   }
 
+  onArticlePress = article => {
+    const {navigation} = this.props;
+    navigation.navigate('article', article);
+  };
+
   render() {
-    return <UserPresenter />;
+    const {
+      articles,
+      route: {params = {}},
+    } = this.props;
+    return (
+      <UserPresenter
+        articles={articles}
+        onArticlePress={this.onArticlePress}
+        user={params}
+      />
+    );
   }
 }
 
-const mapStateToProps = ({user: {auth = {}}}) => {
-  return auth;
+const mapStateToProps = ({user: {user}, articles: {articles = []}}) => {
+  return {user, articles};
 };
 
 export default connect(mapStateToProps)(UserContainer);

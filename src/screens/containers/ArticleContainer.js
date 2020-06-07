@@ -9,9 +9,9 @@ class ArticleContainer extends PureComponent {
     this.onUserCardPressed = this.onUserCardPressed.bind(this);
   }
 
-  onUserCardPressed = () => {
+  onUserCardPressed = user => {
     const {navigation} = this.props;
-    navigation.navigate('user');
+    navigation.navigate('user', user);
   };
 
   render() {

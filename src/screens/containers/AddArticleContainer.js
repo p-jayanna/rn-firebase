@@ -1,8 +1,13 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment';
 import AddArticlePresenter from '../presenters/article/AddArticlePresenter';
 import {ADD_ARTICLE} from '../../store/actions/action-types';
 import {getRandomInt} from '../../services/getRandomNumbers';
+
+//only for development purpose
+import Chance from 'chance';
+const chance = new Chance();
 
 class AddArticleContainer extends PureComponent {
   constructor(props) {
@@ -23,12 +28,16 @@ class AddArticleContainer extends PureComponent {
       navigation,
       route: {params: {base64 = ''} = {}},
     } = this.props;
-
     const article = {
       ...articleDetails,
       id: getRandomInt(999),
       place: 'Javagal, Hassan',
       imagePath: base64,
+      date: moment().format('ll'),
+      user: {
+        name: chance.first(),
+        about: 'Raitha',
+      },
     };
     dispatch({type: ADD_ARTICLE, payload: article});
     navigation.navigate('main');
