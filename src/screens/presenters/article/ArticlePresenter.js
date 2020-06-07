@@ -12,19 +12,19 @@ import ArticleDetails from './ArticleDetails';
 import UserCard from '../../../components/UserCard';
 import AppTouchableOpacity from '../../../components/AppTouchableOpacity';
 import {withBrandSettings} from '../../../styles/withBrandSettings';
+import {translate} from '../../../i18n/i18n';
+import {translationKeys} from '../../../services/constants';
 
 const ArticlePresenter = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
-    article,
-    user,
+    article = {},
     onUserCardPressed,
   } = props;
 
   const styles = _styles(colors, sharedStyle);
-  const {title, price, place, quantity, imagePath} = article;
-
+  const {title, imagePath, description} = article;
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -38,21 +38,23 @@ const ArticlePresenter = props => {
           />
         </View>
         <View style={styles.detailsArea}>
-          <ArticleDetails price={price} quantity={quantity} place={place} />
+          <ArticleDetails article={article} />
         </View>
         <View style={styles.descriptionArea}>
-          <Text style={styles.titleText}>Description</Text>
-
-          <Text style={styles.descriptionText}>
-            {
-              'Vegetables are parts of plants that are consumed by humans or other animals as food. The original meaning is still commonly used and is applied to plants collectively to refer to all edible plant matter, including the flowers, fruits, stems, leaves, roots, and seeds. The alternate definition of the term is applied somewhat arbitrarily, often by culinary and cultural tradition. It may exclude foods derived from some plants that are fruits, flowers, nuts, and cereal grains, but include savoury fruits such as tomatoes and courgettes, flowers such as broccoli, and seeds such as pulses.'
-            }
+          <Text style={styles.titleText}>
+            {translate(translationKeys.description)}
           </Text>
+
+          <Text style={styles.descriptionText}>{description}</Text>
         </View>
         <View style={styles.userArea}>
-          <Text style={styles.titleText}>Provider</Text>
-          <TouchableOpacity style={styles.userBody} onPress={onUserCardPressed}>
-            <UserCard user={user} />
+          <Text style={styles.titleText}>
+            {translate(translationKeys.provider)}
+          </Text>
+          <TouchableOpacity
+            style={styles.userBody}
+            onPress={() => onUserCardPressed(article.user)}>
+            <UserCard user={article.user} />
             <Icon
               name="angle-right"
               size={sharedStyle.fontSize.xl}

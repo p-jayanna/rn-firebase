@@ -5,4 +5,5 @@ export const translationKeys = {
   quantity: 'quantity',
   publish: 'publish',
   add_photos: 'add_photos',
+  provider: 'provider',
 };

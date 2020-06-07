@@ -10,7 +10,7 @@ const MenuCardSearch = props => {
     brandStyle: {sharedStyle},
     onArticlePress,
   } = props;
-  const {title, price, place, quantity, imagePath} = article;
+  const {title, price, place, quantity, imagePath, date} = article;
   const styles = _styles(colors, sharedStyle);
   return (
     <View style={styles.container}>
@@ -32,18 +32,32 @@ const MenuCardSearch = props => {
               </Text>
             </View>
             <View style={styles.detailsArea}>
-              <Text style={styles.priceTag}>{price}</Text>
+              <View style={styles.priceTagArea}>
+                <Text style={styles.priceTag}>{price}</Text>
+                <Icon
+                  name={'rupee'}
+                  color={colors.primary}
+                  size={sharedStyle.fontSize.md}
+                />
+              </View>
               <Text>{quantity}</Text>
             </View>
-            <View style={styles.locationContainer}>
-              <Icon
-                name="map-marker"
-                color={colors.onSurfaceVariant}
-                size={sharedStyle.fontSize.default}
-              />
-              <Text numberOfLines={1} style={styles.locationText}>
-                {place}
-              </Text>
+            <View style={styles.topTagInfo}>
+              <View style={styles.topTagContents}>
+                <Text numberOfLines={1} style={styles.bottomText}>
+                  {date}
+                </Text>
+              </View>
+              <View style={styles.topTagContents}>
+                <Icon
+                  name="map-marker"
+                  color={colors.onSurfaceVariant}
+                  size={sharedStyle.fontSize.default}
+                />
+                <Text numberOfLines={1} style={styles.bottomText}>
+                  {place}
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -80,19 +94,36 @@ const _styles = (colors, sharedStyle) =>
       alignItems: 'center',
       flexDirection: 'row-reverse',
     },
-    locationText: {
+    bottomText: {
       color: colors.onSurfaceVariant,
-      paddingRight: sharedStyle.spacing.xs,
+      paddingLeft: sharedStyle.spacing.xs,
       fontSize: sharedStyle.fontSize.default,
     },
+    topTagInfo: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    topTagContents: {
+      flex: 1,
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
     titleText: {fontSize: sharedStyle.fontSize.sm, fontWeight: 'bold'},
+    priceTagArea: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     detailsArea: {
       flexDirection: 'row',
+      alignItems: 'center',
       justifyContent: 'space-between',
     },
     priceTag: {
       fontSize: sharedStyle.fontSize.sm,
       fontWeight: 'bold',
+      marginRight: sharedStyle.spacing.xs,
       color: colors.primary,
     },
   });

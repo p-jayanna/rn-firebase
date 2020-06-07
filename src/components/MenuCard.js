@@ -42,7 +42,14 @@ const MenuCard = props => {
               </Text>
             </View>
             <View style={styles.detailsArea}>
-              <Text style={styles.priceTag}>{price}</Text>
+              <View style={styles.priceTagArea}>
+                <Text style={styles.priceTag}>{price}</Text>
+                <Icon
+                  name={'rupee'}
+                  color={colors.primary}
+                  size={sharedStyle.fontSize.md}
+                />
+              </View>
               <Text>{quantity}</Text>
             </View>
           </View>
@@ -90,9 +97,15 @@ const _styles = (colors, sharedStyle) =>
       justifyContent: 'space-between',
       padding: sharedStyle.spacing.xs,
     },
+    priceTagArea: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     priceTag: {
       fontSize: sharedStyle.fontSize.sm,
       fontWeight: 'bold',
+      marginRight: sharedStyle.spacing.xs,
       color: colors.primary,
     },
   });

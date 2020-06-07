@@ -16,6 +16,7 @@ const en = {
   price: 'Price',
   quantity: 'Quantity',
   publish: 'Publish Article',
-  add_photos: 'Add/Upload photos'
+  provider: 'Provider',
+  add_photos: 'Add/Upload photos',
 };
 export default en;

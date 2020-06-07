@@ -7,12 +7,11 @@ import {withBrandSettings} from '../../../styles/withBrandSettings';
 const ArticleDetails = props => {
   const {
     colors,
-    place,
-    price,
-    quantity,
+    article,
     brandStyle: {sharedStyle},
   } = props;
   const styles = _styles(colors, sharedStyle);
+  const {price, place, quantity, date} = article;
 
   return (
     <View>
@@ -24,7 +23,7 @@ const ArticleDetails = props => {
             size={sharedStyle.fontSize.default}
           />
           <Text numberOfLines={1} style={styles.locationText}>
-            22 May
+            {date}
           </Text>
         </View>
         <View style={styles.topTagContents}>
@@ -39,7 +38,14 @@ const ArticleDetails = props => {
         </View>
       </View>
       <View style={styles.priceArea}>
-        <Text style={styles.priceTag}>{price}</Text>
+        <View style={styles.priceTagArea}>
+          <Text style={styles.priceTag}>{price}</Text>
+          <Icon
+            name={'rupee'}
+            color={colors.primary}
+            size={sharedStyle.fontSize.md}
+          />
+        </View>
         <Text>{quantity}</Text>
       </View>
       <View style={styles.bottomTagInfo}>
@@ -86,7 +92,13 @@ const _styles = (colors, sharedStyle) =>
     priceTag: {
       fontSize: sharedStyle.fontSize.md,
       fontWeight: 'bold',
+      marginRight: sharedStyle.spacing.xs,
       color: colors.primary,
+    },
+    priceTagArea: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     priceArea: {
       flexDirection: 'row',

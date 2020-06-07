@@ -25,7 +25,6 @@ const AddArticlePresenter = props => {
 
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState('');
   const [description, setDescription] = useState('');
 
   const styles = _styles(colors, sharedStyle);
@@ -35,7 +34,6 @@ const AddArticlePresenter = props => {
       onPublishArticlePress({
         title,
         price,
-        quantity,
         description,
       });
     }
@@ -79,11 +77,6 @@ const AddArticlePresenter = props => {
             keyboardType={'decimal-pad'}
             onChangeText={number => setPrice(number)}
             iconName={'rupee'}
-          />
-          <AppTextInput
-            placeHolderKey={translationKeys.quantity}
-            keyboardType={'default'}
-            onChangeText={text => setQuantity(text)}
           />
         </View>
         <View style={styles.descriptionArea}>

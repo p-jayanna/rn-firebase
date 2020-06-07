@@ -1,9 +1,9 @@
 import {USER, USER_AUTH} from '../actions/action-types';
 const initialUserState = {
   user: {
-    name: 'Narasimha',
-    about: 'Raitha',
-    email: 'hb@gmail.com',
+    name: '',
+    about: '',
+    email: '',
     articles: [],
   },
   auth: {isAuthenticated: false},

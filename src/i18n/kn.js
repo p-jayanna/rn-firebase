@@ -15,6 +15,7 @@ const kn = {
   description: 'ವಿವರಣೆ',
   price: 'ಬೆಲೆ',
   quantity: 'ಪ್ರಮಾಣ',
+  provider: 'ವಿತರಕ',
   publish: 'ವಸ್ತುವನ್ನು  ಪ್ರಕಟಿಸಿ',
   add_photos: 'ಫೋಟೋಗಳನ್ನು ಹಾಕಿ / ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
 };
