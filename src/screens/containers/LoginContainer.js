@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 class LoginContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
   }
 
@@ -20,7 +19,6 @@ class LoginContainer extends PureComponent {
     const {
       device: {fcmToken = ''},
     } = this.props;
-    console.log(fcmToken);
     return <LoginPresenter fcmToken={fcmToken} />;
   }
 }

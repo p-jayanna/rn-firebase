@@ -7,7 +7,6 @@ import MenuCardSearch from '../../components/MenuCardSearch';
 import UserCard from '../../components/UserCard';
 
 const UserPresenter = props => {
-  console.log(props);
   const {
     colors,
     brandStyle: {sharedStyle},

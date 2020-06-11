@@ -31,7 +31,9 @@ const SearchView = props => {
           placeholder={translate('search_main')}
           onChangeText={input => setSearchKey(input)}
           onSubmitEditing={() => {
-            onSearch(searchKey);
+            if (searchKey.length > 0) {
+              onSearch(searchKey);
+            }
           }}
         />
         <TouchableOpacity

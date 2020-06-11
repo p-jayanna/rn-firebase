@@ -12,7 +12,6 @@ const chance = new Chance();
 class AddArticleContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
     this.onOpenCameraPress = this.onOpenCameraPress.bind(this);
     this.onPublishArticlePress = this.onPublishArticlePress.bind(this);
@@ -42,6 +41,7 @@ class AddArticleContainer extends PureComponent {
     dispatch({type: ADD_ARTICLE, payload: article});
     navigation.navigate('main');
   };
+
   render() {
     const {route: {params: {base64 = ''} = {}} = {}} = this.props;
     return (

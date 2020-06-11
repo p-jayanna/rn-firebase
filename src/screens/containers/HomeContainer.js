@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {translate} from '../../i18n/i18n';
 import HomePresenter from '../presenters/HomePresenter';
 
 class HomeContainer extends PureComponent {
@@ -9,6 +8,7 @@ class HomeContainer extends PureComponent {
     this.state = {};
     this.onArticlePress = this.onArticlePress.bind(this);
     this.onFloatingButtonPress = this.onFloatingButtonPress.bind(this);
+    this.onCategorySelected = this.onCategorySelected.bind(this);
   }
 
   onArticlePress = article => {
@@ -21,6 +21,11 @@ class HomeContainer extends PureComponent {
     navigation.navigate('addarticle');
   };
 
+  onCategorySelected = selectedItem => {
+    const {navigation} = this.props;
+    navigation.navigate('search', selectedItem);
+  };
+
   render() {
     const {articles} = this.props;
     return (
@@ -28,6 +33,7 @@ class HomeContainer extends PureComponent {
         onArticlePress={this.onArticlePress}
         onFloatingButtonPress={this.onFloatingButtonPress}
         articles={articles}
+        onCategorySelected={this.onCategorySelected}
       />
     );
   }

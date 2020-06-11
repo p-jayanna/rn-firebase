@@ -4,7 +4,6 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import MenuCardSearch from '../../components/MenuCardSearch';
 
 const SearchPresenter = props => {
-  console.log(props);
   const {
     colors,
     brandStyle: {
@@ -12,6 +11,7 @@ const SearchPresenter = props => {
     },
     onArticlePress,
     articles,
+    searchKey,
   } = props;
   const [isLoading, setLoading] = useState(false);
 
@@ -28,9 +28,7 @@ const SearchPresenter = props => {
   return (
     <View style={styles.container}>
       <View style={styles.filterContainer}>
-        <Text style={{color: colors.onPrimary}}>
-          {'coming soon --- filters'}
-        </Text>
+        <Text style={{color: colors.onPrimary}}>{searchKey}</Text>
       </View>
       <View style={styles.bodyContainer}>
         <FlatList
@@ -61,7 +59,7 @@ const _styles = (colors, fontSize) =>
       backgroundColor: colors.primary,
     },
     filterContainer: {
-      backgroundColor: colors.primary,
+      backgroundColor: colors.primaryVariant,
       padding: 20,
     },
     bodyContainer: {

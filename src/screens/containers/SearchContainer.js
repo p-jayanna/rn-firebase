@@ -16,9 +16,13 @@ class SearchContainer extends PureComponent {
   };
 
   render() {
-    const {articles} = this.props;
+    const {
+      articles,
+      route: {params},
+    } = this.props;
     return (
       <SearchPresenter
+        searchKey={params}
         onArticlePress={this.onArticlePress}
         articles={articles}
       />

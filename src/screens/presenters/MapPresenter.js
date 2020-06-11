@@ -4,7 +4,6 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import AppMapView from '../../components/MapView';
 
 const MapPresenter = props => {
-  console.log(props);
   const {
     colors,
     brandStyle: {

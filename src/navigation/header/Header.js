@@ -18,7 +18,7 @@ const AppHeader = props => {
   };
 
   const onSearch = searchKey => {
-    navigation.navigate('search');
+    navigation.navigate('search', searchKey);
   };
 
   const onLocationPress = searchKey => {

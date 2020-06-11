@@ -5,7 +5,6 @@ import CameraPresenter from '../presenters/CameraPresenter';
 class CameraContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
   }
   onImageCapture = capturedImage => {

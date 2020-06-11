@@ -1,8 +1,8 @@
 import {sharedStyle} from '../typography/sizes';
 
 export const colors = {
-  primary: '#6200EE',
-  primaryVariant: '#3700B3',
+  primary: '#3700B3',
+  primaryVariant: '#6200EE',
   secondary: '#03DAC6',
   secondaryVariant: '#018786',
   background: '#E0E0E0',

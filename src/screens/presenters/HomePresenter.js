@@ -13,6 +13,7 @@ const HomePresenter = props => {
     onArticlePress,
     onFloatingButtonPress,
     articles,
+    onCategorySelected,
   } = props;
 
   const [isLoading, setLoading] = useState(false);
@@ -35,7 +36,12 @@ const HomePresenter = props => {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <MenuList title={item.title} name={item.name} />
+            <MenuList
+              title={item.title}
+              name={item.name}
+              id={item.id}
+              onCategorySelected={onCategorySelected}
+            />
           )}
           keyExtractor={item => item.id}
         />

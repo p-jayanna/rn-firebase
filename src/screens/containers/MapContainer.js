@@ -5,7 +5,6 @@ import MapPresenter from '../presenters/MapPresenter';
 class MapContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
   }
 
