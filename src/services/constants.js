@@ -6,4 +6,8 @@ export const translationKeys = {
   publish: 'publish',
   add_photos: 'add_photos',
   provider: 'provider',
+  username: 'username',
+  telephone: 'telephone',
+  email: 'email',
+  password: 'password',
 };

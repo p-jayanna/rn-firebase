@@ -162,8 +162,6 @@ const _styles = (colors, sharedStyle) =>
     },
     image: {flex: 1, height: undefined, width: undefined},
     detailsArea: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
       marginTop: sharedStyle.spacing.default,
       paddingVertical: sharedStyle.spacing.default,
       backgroundColor: colors.surface,

@@ -4,7 +4,7 @@ import {withBrandSettings} from '../../styles/withBrandSettings';
 import {translate} from '../../i18n/i18n';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const LoginPresenter = props => {
+const LoadingPresenter = props => {
   const {
     colors,
     brandStyle: {
@@ -43,4 +43,4 @@ const _styles = (colors, fontSize) =>
     },
   });
 
-export default withBrandSettings(LoginPresenter);
+export default withBrandSettings(LoadingPresenter);

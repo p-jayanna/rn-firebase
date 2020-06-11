@@ -16,11 +16,7 @@ const AppTouchableOpacity = props => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Icon
-        name={icon}
-        size={sharedStyle.fontSize.md}
-        color={colors.onPrimary}
-      />
+      <Icon name={icon} size={20} color={colors.onPrimary} />
       <Text style={styles.textStyle}>{name}</Text>
     </TouchableOpacity>
   );

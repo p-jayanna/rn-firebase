@@ -9,6 +9,7 @@ import MapContainer from '../../screens/containers/MapContainer';
 import AddArticleContainer from '../../screens/containers/AddArticleContainer';
 import CameraContainer from '../../screens/containers/CameraContainer';
 import UserContainer from '../../screens/containers/UserContainer';
+import LoginContainer from '../../screens/containers/LoginContainer';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,13 @@ const HomeStack = props => {
         options={({navigation}) => ({
           headerTitle: () => <AppHeader navigation={navigation} />,
         })}
+      />
+      <Stack.Screen
+        name="login"
+        component={LoginContainer}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="user"

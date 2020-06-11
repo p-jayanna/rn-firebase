@@ -18,5 +18,14 @@ const en = {
   publish: 'Publish Article',
   provider: 'Provider',
   add_photos: 'Add/Upload photos',
+  username: 'Username',
+  password: 'Password',
+  email: 'E-mail',
+  telephone: 'Mobile Number',
+  or: 'Or',
+  login_text1: 'Please Enter Email/Mobile',
+  login_text2: 'Enter Verification Code',
+  login_send_otp: 'Send OTP',
+  login_confirm_otp: 'Confirm OTP',
 };
 export default en;

@@ -1,25 +1,21 @@
 import React, {PureComponent} from 'react';
-import LoginPresenter from '../presenters/LoginPresenter';
+import LoginPresenter from '../presenters/login/LoginPresenter';
 import {connect} from 'react-redux';
 
 class LoginContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};
+    this.verifyUser = this.verifyUser.bind(this);
   }
 
-  componentDidMount() {
+  verifyUser = () => {
     const {navigation} = this.props;
-    setTimeout(() => {
-      navigation.navigate('Home');
-    }, 1000);
-  }
+    navigation.navigate('main');
+  };
 
   render() {
-    const {
-      device: {fcmToken = ''},
-    } = this.props;
-    return <LoginPresenter fcmToken={fcmToken} />;
+    return <LoginPresenter verifyUser={this.verifyUser} />;
   }
 }
 

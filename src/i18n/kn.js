@@ -18,5 +18,14 @@ const kn = {
   provider: 'ವಿತರಕ',
   publish: 'ವಸ್ತುವನ್ನು  ಪ್ರಕಟಿಸಿ',
   add_photos: 'ಫೋಟೋಗಳನ್ನು ಹಾಕಿ / ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  username: 'ಬಳಕೆದಾರರ ಹೆಸರು',
+  password: 'ರಹಸ್ಯ ಪದ',
+  email: 'ಇಮೇಲ್',
+  telephone: 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ',
+  or: 'ಅಥವಾ',
+  login_text1: 'ದಯವಿಟ್ಟು ಇಮೇಲ್ ಅಥವಾ ಮೊಬೈಲ್ ನಮೂದಿಸಿ',
+  login_text2: 'ಪರೀಶೀಲನಾ ಸ೦ಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿರಿ',
+  login_send_otp: 'OTP ಕಳುಹಿಸಿ',
+  login_confirm_otp: 'OTP ಖಚಿತಪಡಿಸಿ',
 };
 export default kn;

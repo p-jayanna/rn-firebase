@@ -13,6 +13,7 @@ const DrawerContent = props => {
   const {
     colors,
     brandStyle: {sharedStyle},
+    navigation,
   } = props;
   const {
     user: {user: {name = 'Sign In', email = '', about = ''} = {}} = {},
@@ -23,7 +24,10 @@ const DrawerContent = props => {
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
         <View style={styles.userArea}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('login');
+            }}>
             <View style={styles.userDetails}>
               <Icon
                 name="user-circle"

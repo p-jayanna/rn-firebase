@@ -18,9 +18,9 @@ const AppTextInput = props => {
 
   const styles = _styles(colors, sharedStyle);
   return (
-    <View style={styles.container}>
+    <View style={isFocused ? styles.containerOnFocus : styles.container}>
       <TextInput
-        style={isFocused ? styles.textViewOnFocus : styles.textView}
+        style={styles.textView}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         placeholder={translate(placeHolderKey)}
@@ -28,7 +28,13 @@ const AppTextInput = props => {
         multiline={multiline}
         onChangeText={onChangeText}
       />
-      {iconName && <Icon name={'rupee'} color={colors.onSurfaceVariant} />}
+      {iconName && (
+        <Icon
+          name={iconName}
+          color={colors.onSurfaceVariant}
+          size={sharedStyle.fontSize.md}
+        />
+      )}
     </View>
   );
 };
@@ -36,13 +42,24 @@ const AppTextInput = props => {
 const _styles = (colors, sharedStyle) =>
   StyleSheet.create({
     container: {
-      flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
       borderRadius: sharedStyle.borderRadius.default,
       padding: sharedStyle.spacing.md,
       marginHorizontal: sharedStyle.spacing.xs,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.background,
+    },
+    containerOnFocus: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderRadius: sharedStyle.borderRadius.default,
+      padding: sharedStyle.spacing.md,
+      marginHorizontal: sharedStyle.spacing.xs,
+      borderBottomWidth: 1,
+      borderBottomColor: colors.primary,
     },
     textStyle: {
       paddingLeft: sharedStyle.spacing.md,
@@ -51,13 +68,6 @@ const _styles = (colors, sharedStyle) =>
     },
     textView: {
       flex: 1,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.background,
-    },
-    textViewOnFocus: {
-      flex: 1,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.primary,
     },
   });
 

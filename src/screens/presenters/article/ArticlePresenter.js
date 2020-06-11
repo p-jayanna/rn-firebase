@@ -65,7 +65,6 @@ const ArticlePresenter = props => {
         </View>
       </ScrollView>
       <View style={styles.bottomFixed}>
-        <AppTouchableOpacity name={'Message'} icon={'envelope'} />
         <AppTouchableOpacity
           name={'Call'}
           onPress={() => {
@@ -73,6 +72,7 @@ const ArticlePresenter = props => {
           }}
           icon={'phone'}
         />
+        <AppTouchableOpacity name={'Message'} icon={'envelope'} />
       </View>
     </View>
   );

@@ -15,7 +15,7 @@ const AppCamera = props => {
   const cameraRef = useRef();
 
   const takePicture = async camera => {
-    const options = {quality: 0.2, height: 400, width: 800, base64: true};
+    const options = {quality: 0.2, height: 120, width: 210, base64: true};
     const data = await camera.takePictureAsync(options);
     onImageCapture(data);
   };
@@ -58,7 +58,7 @@ const _styles = (colors, sharedStyle) =>
       height: '100%',
       width: '100%',
     },
-    capture:{
+    capture: {
       padding: sharedStyle.spacing.default,
     },
     bottomFixed: {
