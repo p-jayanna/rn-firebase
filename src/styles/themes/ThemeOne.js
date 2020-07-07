@@ -1,18 +1,22 @@
 import {sharedStyle} from '../typography/sizes';
 
 export const colors = {
-  primary: '#6200EE',
-  primaryVariant: '#3700B3',
+  primary: '#3700B3',
+  primaryVariant: '#6200EE',
   secondary: '#03DAC6',
   secondaryVariant: '#018786',
-  background: '#FFFFFF',
+  background: '#E0E0E0',
   surface: '#FFFFFF',
-  error: '#B00020',
   onPrimary: '#FFFFFF',
   onSecondary: '#000000',
   onBackground: '#000000',
   onSurface: '#000000',
+  onSurfaceVariant: '#757575',
   onError: '#FFFFFF',
+  info: '#62B1F6',
+  error: '#d9534f',
+  warning: '#f0ad4e',
+  success: '#4F8A10',
 };
 
 export const themeMode = {

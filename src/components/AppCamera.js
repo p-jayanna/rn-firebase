@@ -1,0 +1,74 @@
+import React, {useRef} from 'react';
+import {RNCamera} from 'react-native-camera';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {withBrandSettings} from '../styles/withBrandSettings';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+const AppCamera = props => {
+  const {
+    colors,
+    brandStyle: {sharedStyle},
+    onImageCapture,
+  } = props;
+  const styles = _styles(colors, sharedStyle);
+
+  const cameraRef = useRef();
+
+  const takePicture = async camera => {
+    const options = {quality: 0.2, height: 120, width: 210, base64: true};
+    const data = await camera.takePictureAsync(options);
+    onImageCapture(data);
+  };
+
+  return (
+    <RNCamera
+      ref={cameraRef}
+      style={styles.preview}
+      type={RNCamera.Constants.Type.back}
+      flashMode={RNCamera.Constants.FlashMode.off}
+      androidCameraPermissionOptions={{
+        title: 'Permission to use camera',
+        message: 'Please give permission to take the photos',
+        buttonPositive: 'Ok',
+        buttonNegative: 'Cancel',
+      }}>
+      {({camera}) => {
+        return (
+          <View style={styles.bottomFixed}>
+            <TouchableOpacity
+              onPress={() => takePicture(camera)}
+              style={styles.capture}>
+              <Icon
+                name="camera"
+                color={colors.primary}
+                size={sharedStyle.fontSize.xl * 2}
+              />
+            </TouchableOpacity>
+          </View>
+        );
+      }}
+    </RNCamera>
+  );
+};
+
+const _styles = (colors, sharedStyle) =>
+  StyleSheet.create({
+    preview: {
+      flex: 1,
+      height: '100%',
+      width: '100%',
+    },
+    capture: {
+      padding: sharedStyle.spacing.default,
+    },
+    bottomFixed: {
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'absolute',
+      backgroundColor: colors.background,
+      bottom: 0,
+    },
+  });
+
+export default withBrandSettings(AppCamera);

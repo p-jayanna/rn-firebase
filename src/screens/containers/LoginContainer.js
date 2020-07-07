@@ -1,32 +1,26 @@
 import React, {PureComponent} from 'react';
-import LoginPresenter from '../presenters/LoginPresenter';
+import LoginPresenter from '../presenters/login/LoginPresenter';
 import {connect} from 'react-redux';
-import {USER_AUTH} from '../../store/actions/action-types';
 
 class LoginContainer extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {};
+    this.verifyUser = this.verifyUser.bind(this);
   }
 
-  componentDidMount() {
-    const {dispatch} = this.props;
-    setTimeout(() => {
-      dispatch({
-        type: USER_AUTH,
-        payload: {isAuthenticated: true},
-      });
-    }, 5000);
-  }
+  verifyUser = () => {
+    const {navigation} = this.props;
+    navigation.navigate('main');
+  };
 
   render() {
-    return <LoginPresenter />;
+    return <LoginPresenter verifyUser={this.verifyUser} />;
   }
 }
 
-const mapStateToProps = ({user: {auth = {}}}) => {
-  return auth;
+const mapStateToProps = ({device = {}}) => {
+  return {device};
 };
 
 export default connect(mapStateToProps)(LoginContainer);

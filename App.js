@@ -16,6 +16,7 @@ import AppNavigator from './src/navigation/AppNavigator';
 import {i18nConfig} from './src/config/i18n-config';
 import {configureApiClient} from './src/config/api-config';
 import {enableScreens} from 'react-native-screens';
+import MessageListener from './src/services/MessageListener';
 
 //configure api calls using axios package
 configureApiClient();
@@ -34,6 +35,8 @@ class componentName extends PureComponent {
 
   async componentDidMount() {
     RNLocalize.addEventListener('change', this.handleLocalizationChange());
+    MessageListener.getFcmToken();
+    MessageListener.listenToMessages();
   }
 
   componentWillUnmount() {
@@ -57,7 +60,9 @@ class componentName extends PureComponent {
                   <Container>
                     <NavigationContainer>
                       <StatusBar
-                        backgroundColor={brandStyle.colors[currentTheme].header}
+                        backgroundColor={
+                          brandStyle.colors[currentTheme].primary
+                        }
                       />
                       <AppNavigator />
                     </NavigationContainer>

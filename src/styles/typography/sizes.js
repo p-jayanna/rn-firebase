@@ -1,8 +1,8 @@
 export const sizes = {
-  default: 8,
+  default: 10,
   xs: 5,
   md: 15,
-  lg: 28,
+  lg: 20,
   xl: 34,
 };
 

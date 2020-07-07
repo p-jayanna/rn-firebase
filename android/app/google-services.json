@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "348870222479",
+    "firebase_url": "https://mobile-santhe.firebaseio.com",
+    "project_id": "mobile-santhe",
+    "storage_bucket": "mobile-santhe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348870222479:android:1e1bd4361c6de27a4946fa",
+        "android_client_info": {
+          "package_name": "com.reactnativebootstrap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348870222479-n1ue7bd6h2cqa37krfmcpamgde55eue8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8Fctyzc-2HHf4sLIa_wnRYe1w1kg5Nq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348870222479-n1ue7bd6h2cqa37krfmcpamgde55eue8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
