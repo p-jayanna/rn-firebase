@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import LoadingPresenter from '../presenters/LoadingPresenter';
+import VideoPresenter from '../presenters/VideoPresenter';
 
 class LoadingContainer extends PureComponent {
   constructor(props) {
@@ -8,18 +9,13 @@ class LoadingContainer extends PureComponent {
     this.state = {};
   }
 
-  componentDidMount() {
-    const {navigation} = this.props;
-    setTimeout(() => {
-      navigation.navigate('Home');
-    }, 1000);
-  }
+  componentDidMount() {}
 
   render() {
     const {
       device: {fcmToken = ''},
     } = this.props;
-    return <LoadingPresenter fcmToken={fcmToken} />;
+    return <VideoPresenter />;
   }
 }
 
